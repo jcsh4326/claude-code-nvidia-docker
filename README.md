@@ -1,5 +1,7 @@
 # claude-code-nvidia-docker
 
+[中文](README_zh.md) | English
+
 Docker development environment based on NVIDIA CUDA with Claude Code CLI pre-installed, ready for VS Code Dev Containers.
 
 ## Prerequisites
