@@ -20,7 +20,6 @@
     },
     "runArgs": [
         "--gpus", "all",
-        "--name", "claude-workspace",
         "-e", "HTTP_PROXY=http://host.docker.internal:7890",
         "-e", "HTTPS_PROXY=http://host.docker.internal:7890",
         "-e", "NO_PROXY=localhost,127.0.0.1"

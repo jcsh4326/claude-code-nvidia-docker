@@ -83,6 +83,19 @@ To disable the proxy entirely, remove all `-e HTTP_PROXY` / `-e HTTPS_PROXY` lin
 
 Remove `--gpus all` from the `docker run` commands in `run_claude.sh` / `run_claude.bat` and the `runArgs` section in `.devcontainer/devcontainer.json`.
 
+## Using in a New Project
+
+Copy the `.devcontainer` folder into your new project, then open it in VS Code:
+
+```bash
+cp -r /path/to/claude-code-nvidia-docker/.devcontainer /path/to/my-new-project/
+code /path/to/my-new-project
+```
+
+VS Code will prompt **"Reopen in Container"** automatically. Each project gets its own container named after the project folder, so multiple projects can run simultaneously.
+
+> **Proxy not needed?** Remove the `HTTP_PROXY` / `HTTPS_PROXY` entries from both `runArgs` and `claudeCode.environmentVariables` in `.devcontainer/devcontainer.json`.
+
 ## Project Structure
 
 ```

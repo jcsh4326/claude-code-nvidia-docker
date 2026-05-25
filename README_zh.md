@@ -83,6 +83,19 @@ claude
 
 删除 `run_claude.sh` / `run_claude.bat` 中的 `--gpus all` 参数，以及 `.devcontainer/devcontainer.json` 的 `runArgs` 中对应的 `"--gpus", "all"` 两行即可。
 
+## 在新项目中使用
+
+将 `.devcontainer` 文件夹复制到新项目中，然后用 VS Code 打开：
+
+```bash
+cp -r /path/to/claude-code-nvidia-docker/.devcontainer /path/to/my-new-project/
+code /path/to/my-new-project
+```
+
+VS Code 会自动提示 **"Reopen in Container"**。每个项目的容器名基于项目文件夹名自动生成，多个项目可同时运行互不冲突。
+
+> **不需要代理？** 删除 `.devcontainer/devcontainer.json` 中 `runArgs` 和 `claudeCode.environmentVariables` 里的 `HTTP_PROXY` / `HTTPS_PROXY` 相关行即可。
+
 ## 项目结构
 
 ```
