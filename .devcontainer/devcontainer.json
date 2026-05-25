@@ -1,0 +1,32 @@
+{
+    "name": "claude-dev",
+    "image": "claude-dev",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "anthropic.claude-code"
+            ],
+            "settings": {
+                "http.proxy": "http://host.docker.internal:7890",
+                "https.proxy": "http://host.docker.internal:7890",
+                "http.proxyStrictSSL": false,
+                "claudeCode.environmentVariables": [
+                    { "name": "HTTP_PROXY", "value": "http://host.docker.internal:7890" },
+                    { "name": "HTTPS_PROXY", "value": "http://host.docker.internal:7890" },
+                    { "name": "NO_PROXY", "value": "localhost,127.0.0.1" }
+                ]
+            }
+        }
+    },
+    "runArgs": [
+        "--gpus", "all",
+        "--name", "claude-workspace",
+        "-e", "HTTP_PROXY=http://host.docker.internal:7890",
+        "-e", "HTTPS_PROXY=http://host.docker.internal:7890",
+        "-e", "NO_PROXY=localhost,127.0.0.1"
+    ],
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind"
+    ],
+    "workspaceFolder": "/workspace"
+}

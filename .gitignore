@@ -1,0 +1,26 @@
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code (keep .devcontainer, ignore local workspace settings)
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Node
+node_modules/
